@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project1</title>
+    <link href="https://cdn.rawgit.com/rastikerdar/vazir-font/v20.1.1/dist/font-face.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+    
+        html , input , button {
+            font-family: "Vazir" !important;
+            direction: rtl
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column
+        }
+        .start-box {
+            margin: 20px 0;
+            display: none;
+        }
+        .start-box.active{
+            display: block;
+        }
+
+        .start-box #input-counter {
+            padding: 7px;
+            width: 300px;
+            outline-color: black;
+            border: 1px solid rgba(0,0,0,.4);
+            border-radius: 2px;
+        }
+
+        .start-box #start-counter {
+            border: none;
+            padding: 7px 10px;
+            cursor: pointer;
+            background: #e74c3c;
+            color: white;
+            border-radius: 2px;
+        }
+
+        .message {
+            margin-top: 10px;
+            font-size: .9em;
+        }
+
+        .message .loading {
+            color: #ee3c28;
+            display: none;
+        }
+
+        .message .success {
+            color: #27ae60;
+            display: none;
+        }
+    
+        #error-message{
+            font-size: .9em;
+            color: #ee3c28;
+            display: none;
+        }
+        #error-message.active{
+            display: block;
+        }
+        .c100{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="start-box active">
+            <input type="text"  id="input-counter" placeholder="زمان خود را به ثانیه اضافه کنید">
+            <button id="start-counter">شروع</button>
+        </div>
+        <div id="error-message"></div>
+        <div class="c100 p100">
+           <span>250</span>
+           <div class="slice">
+             <div class="bar"></div>
+             <div class="fill"></div>
+          </div>
+        </div>
+        <div class="message">
+            <span class="loading">در حال اجرا....</span>
+            <span class="success">شمارنده با موفقیت به پایان رسید</span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
